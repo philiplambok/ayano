@@ -12,7 +12,7 @@ module AuthHelper
     return false unless validate_headers
     return false unless validate_token
 
-    # return's true is pass validation 
+    # returns true is pass validation 
     true
   end
 
@@ -39,7 +39,7 @@ module AuthHelper
     # check avaiability user_id 
     return false unless user_id
 
-    # return's true if pass validations 
+    # returns true if pass validations 
     true
   end
 

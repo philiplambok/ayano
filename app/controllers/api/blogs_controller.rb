@@ -17,10 +17,18 @@ class Api::BlogsController < ApplicationController
   end
 
   def create
-    json_response(current_user)
+    @blog = current_user.blogs.build blog_params 
+    
+    if @blog.save 
+      json_response(@blog)
+    end
   end
 
   private
+  def blog_params
+    params.require(:blog).permit(:title, :url)
+  end
+
   def find_all_blogs 
     @blogs = Blog.page(params[:page]) 
   end
