@@ -73,6 +73,6 @@ class Api::BlogsController < ApplicationController
   end
 
   def must_same_user 
-    forbidden_message unless current_user == @blog.user
+    forbidden_message unless current_user.admin? || current_user == @blog.user 
   end
 end

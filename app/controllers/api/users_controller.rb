@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   before_action :find_all_users, only: [:index]
-  before_action :set_user, only: [:show, :blogs]
-  before_action :validate_availability_user, only: [:show, :blogs]
+  before_action :set_user, only: [:show, :blogs, :role]
+  before_action :validate_availability_user, only: [:show, :blogs, :role]
 
   def index
     json_response(@users)
@@ -11,8 +11,12 @@ class Api::UsersController < ApplicationController
     json_response(@user)
   end
 
-  def blogs 
+  def blogs
     json_response(@user.blogs)
+  end
+
+  def role
+    json_response(@user.role)
   end
 
   private 

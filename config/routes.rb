@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :users do 
       member do 
         get 'blogs'
+        get 'role'
       end
     end
   end
