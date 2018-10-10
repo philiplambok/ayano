@@ -16,6 +16,32 @@ Features that we handing
 - Listing Links
 - Profile User
 
+## Usage
+### Installation
+`bundle install`
+
+### DB Migration
+`bin/rails db:migrate`
+
+### DB Seed
+`bin/rake db:seed`
+
+### Serve Aplication
+`bin/rails server`
+
+## User Information
+### Admin
+```
+username: pquest
+password: kelapa
+```
+
+### Member
+```
+username: user#{1-50}
+password: kelapa
+```
+
 ## Enpoints 
 ### Authentication 
 We using JWT JSON token for authentication. 
